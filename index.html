@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <title>Story Pages</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel='stylesheet' href='https://unpkg.com/modern-css-reset/dist/reset.min.css'>
+  <link rel='stylesheet' href='https://unpkg.com/splitting/dist/splitting.css'>
+  <link rel='stylesheet' href='https://unpkg.com/splitting/dist/splitting-cells.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@700&amp;display=swap'>
+  <link rel='stylesheet' href='https://use.typekit.net/zlj2zcu.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 
@@ -53,15 +58,81 @@
   0% {transform:scale(1,1); opacity:1 }
   100% {transform:scale(2,2); opacity:0 }
 }
-
 @keyframes update-count {
   0% {transform:scale(0,0); opacity:0 }
   100% {transform:scale(1,1); opacity:1 }
 }
+
+
+body {
+  background: transparent;
+  color: var(--color);
+}
+
+h1 > span {
+  line-height: 1;
+  font-size: clamp( var(--fluid-type-min, 1rem), calc(1rem + var(--fluid-type-target, 3vw)), var(--fluid-type-max, 1.3rem) );
+  display: block;
+}
+
+.main {
+  --fluid-type-min: 4rem;
+  --fluid-type-max: 5rem;
+  --fluid-type-target: 10vw;
+  font-family: acier-bat-gris, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 0.9;
+  margin-left: -0.06ch;
+}
+
+.main .char {
+  cursor: zoom-in;
+  transform-origin: center bottom;
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.7, 1.8), color 400ms ease;
+  color: var(--color);
+  box-shadow: none;
+}
+
+.main .char:nth-child(3),
+.main .char:nth-child(4) {
+  letter-spacing: 0.02ch;
+}
+
+.main .char:hover {
+  transform: scale(1.4);
+  transition-duration: 200ms;
+  text-shadow: 0px 0px 3px black, 0px 0px 20px var(--color);
+  z-index: 1;
+}
+
+.main .char:nth-child(1):hover {
+  --color: #ffd300;
+}
+
+.main .char:nth-child(2):hover {
+  --color: #de38c8;
+}
+
+.main .char:nth-child(3):hover {
+  --color: #8b5fda;
+}
+
+.main .char:nth-child(4):hover {
+  --color: #86bbd8;
+}
+
+.main .char:nth-child(5):hover {
+  --color: #d3f6db;
+}
+
+.main .char:nth-child(6):hover {
+  --color: #eb9486;
+}
+
 </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">  
 <div class="wrapper">
 <div class="banner">
@@ -114,13 +185,18 @@
     </g>
   </g>
 </svg>
-
         </span>
       </span>
     </a>
   </div>
+<h1>
+  <span class="main" aria-label="boring" data-splitting>Boring</span>
+</h1>
+  </body>
+  </html>
 <!-- partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
-
+<script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
+<script>Splitting();</script>
 </body>
 </html>
