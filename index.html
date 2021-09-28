@@ -5,7 +5,60 @@
   <title>Story Pages</title>
   <link rel="stylesheet" href="./style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
 
+.container { width:600px; margin:0 auto}
+
+.reactions { display:flex; justify-content:flex-start; align-items:flex-start}
+
+.reaction { text-decoration:none; color:#000; font-weight:bold; font-family:'Arial', 'Helvetica', sans-serif; display:inline-block; border-radius:3px; background-color:rgba(0,0,0,0.04); border:1px solid transparent; box-sizing: border-box; transition:all 0.1s; -webkit-transition:all 0.1s; position:relative; margin-right:5px; }
+
+.reaction.large { padding:15px }
+.reaction.large .emoji { font-size:30px }
+.reaction.large .count { font-size:20px }
+
+.reaction .add-emoji svg { width:24px; height:16px; margin:2px 5px -2px 5px}
+.reaction.large .add-emoji svg { width:40px; height:26px; margin:-3px 0 -8px 0}
+
+.reaction.active:after {
+  content:""; display:block; position:absolute; width:100%; height:100%; border-radius:3px; background:#007fff; opacity:0; transform:scale(0, 0); top:0; left:0; z-index:-1; pointer-events:none; animation-name: reaction-on;
+  animation-duration: 0.25s;
+}
+
+.reaction:hover { border:1px solid #007fff; background-color:rgba(0,127,255, 0.1); }
+.reaction.active.over:hover { border-color:red; background-color:rgba(255,0,0,0.1);}
+.reaction:active { background-color:rgba(0,127,255, 0.2); }
+.reaction.active { border:1px solid #007fff; background-color:rgba(0,127,255,0.2); }
+
+.reaction .inner { display:flex; flex-wrap:nowrap; justify-content:space-between; align-items:center}
+
+.reaction .emoji { font-size:12px; line-height:18px; margin:2px 5px 0 5px}
+.reaction .count { font-size:11px; line-height:20px; margin-right:5px }
+
+.reaction.out {
+  transition:all 0.2s;
+  transform:scale(2,2); opacity:0; pointer-events:none;
+}
+
+.reaction.active .emoji{
+  animation-name: update-count;
+  animation-duration: 0.5s;
+}
+.reaction.active .count{
+  animation-name: update-count;
+  animation-duration: 0.25s;
+}
+
+@keyframes reaction-on {
+  0% {transform:scale(1,1); opacity:1 }
+  100% {transform:scale(2,2); opacity:0 }
+}
+
+@keyframes update-count {
+  0% {transform:scale(0,0); opacity:0 }
+  100% {transform:scale(1,1); opacity:1 }
+}
+</style>
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -33,6 +86,39 @@
     Continue the stories <br><br>Continue the stories
     Spaces to write the stories</p>
 </section>
+<div class='container'>
+  <div class='reactions'>
+    <a class='reaction large' href='javascript:;' data-count=0 data-keep=1>
+      <span class='inner'>
+        <span class='emoji'>👍</span>
+        <span class='count'></span>
+      </span>
+    </a>
+    <a class='reaction large' href='javascript:;' data-count=0 data-keep=1>
+      <span class='inner'>
+        <span class='emoji'>😂</span>
+        <span class='count'></span>
+      </span>
+    </a>
+    <a class='reaction large' href='javascript:;' data-count=0 data-keep=1>
+      <span class='inner'>
+        <span class='emoji'>😡</span>
+        <span class='count'></span>
+      </span>
+    </a>
+  <g transform="translate(4)">
+    <polygon points="17.917 2.083 20 2.083 20 2.917 17.917 2.917 17.917 5 17.083 5 17.083 2.917 15 2.917 15 2.083 17.083 2.083 17.083 0 17.917 0"/>
+    <g transform="translate(0 2)">
+      <path d="M8,0 C3.60023529,0 0,3.60023529 0,8 C0,12.3997647 3.60023529,16 8,16 C12.3997647,16 16,12.3997647 16,8 C16,3.60023529 12.3997647,0 8,0 Z M8,15.0588235 C4.11764706,15.0588235 0.941176471,11.8823529 0.941176471,8 C0.941176471,4.11764706 4.11764706,0.941176471 8,0.941176471 C11.8823529,0.941176471 15.0588235,4.11764706 15.0588235,8 C15.0588235,11.8823529 11.8823529,15.0588235 8,15.0588235 Z"/>
+      <path d="M10.4945882 10.4945882C9.12969412 11.8594824 6.87152941 11.8594824 5.50658824 10.4945882 5.31816941 10.3061694 5.036 10.3061694 4.84757647 10.4945882 4.65915765 10.6830071 4.65915765 10.9651765 4.84757647 11.1536 5.71797647 12.024 6.84757647 12.4707059 8.00004706 12.4707059 9.15251765 12.4707059 10.2822118 12.0240235 11.1525176 11.1526824 11.3409365 10.9642635 11.3409365 10.6820941 11.1525176 10.4936706 10.9650165 10.3061694 10.6819294 10.3061694 10.4944235 10.4945896L10.4945882 10.4945882zM6.82352941 6.11764706C6.82352941 7.68658824 4.47058824 7.68658824 4.47058824 6.11764706 4.47058824 4.54870588 6.82352941 4.54870588 6.82352941 6.11764706M11.5294118 6.11764706C11.5294118 7.68658824 9.17647059 7.68658824 9.17647059 6.11764706 9.17647059 4.54870588 11.5294118 4.54870588 11.5294118 6.11764706"/>
+    </g>
+  </g>
+</svg>
+
+        </span>
+      </span>
+    </a>
+  </div>
 <!-- partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
 
