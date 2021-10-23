@@ -10,8 +10,8 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@700&amp;display=swap'>
   <link rel='stylesheet' href='https://use.typekit.net/zlj2zcu.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.2.2/introjs.min.css" integrity="sha512-631ugrjzlQYCOP9P8BOLEMFspr5ooQwY3rgt8SMUa+QqtVMbY/tniEUOcABHDGjK50VExB4CNc61g5oopGqCEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-
 .container { width:600px; margin:0 auto}
 
 .reactions { display:flex; justify-content:flex-start; align-items:flex-start}
@@ -135,8 +135,8 @@ h1 > span {
 <body>
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">  
 <div class="wrapper">
-<div class="banner">
-  <h2>Heaven</h2>
+<div>
+  <h2 id="step-one">Heaven</h2>
   <div class="clouds">
     <img src="https://i.postimg.cc/PrMrJc9d/cloud1.png" style="--i:1">
     <img src="https://i.postimg.cc/fRTW9CQm/cloud2.png" style="--i:2">
@@ -152,8 +152,8 @@ h1 > span {
   <div class="arrow animated bounce"></div>
 </div>
 <section>
-  <h1>Story Will Go Here</h1>
-  <p>The Zero Dollar Meals Project Stories<br><br>
+  <h1 id="step-two" data-title="Hello" data-intro="What the hell" >Story Will Go Here</h1>
+  <p id="step-three">The Zero Dollar Meals Project Stories<br><br>
     Continue the stories <br><br>Continue the stories
     Spaces to write the stories</p>
 </section>
@@ -161,7 +161,7 @@ h1 > span {
   <div class='reactions'>
     <a class='reaction large' href='javascript:;' data-count=0 data-keep=1>
       <span class='inner'>
-        <span class='emoji'>👍</span>
+        <span class='emoji'data-title="Hello" data-intro="What the hell">👍</span>
         <span class='count'></span>
       </span>
     </a>
@@ -197,8 +197,32 @@ h1 > span {
   </body>
   </html>
 <!-- partial -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.2.2/intro.min.js" integrity="sha512-Q5ZL29wmQV0WWl3+QGBzOFSOwa4e8lOP/o2mYGg13sJR7u5RvnY4yq83W5+ssZ/VmzSBRVX8uGhDIpVSrLBQog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script  src="./script.js"></script>
 <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
 <script>Splitting();</script>
+<script>src="https://unpkg.com/intro.js/minified/intro.min.js"</script>
+<script>
+  const intro = introJs();
+
+  introJs().setOptions({
+  steps: [{
+    title: 'Welcome',
+    intro: 'Hello World! 👋'
+  },
+  {
+    element: document.querySelector('.step-one'),
+    intro: 'This step focuses on an image'
+  },
+  {
+    title: 'Farewell!',
+    element: document.querySelector('.step-two'),
+    intro: 'And this is our final step!'
+  }]
+}).start();
+
+
+</script>
 </body>
 </html>
