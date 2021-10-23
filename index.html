@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Story Pages</title>
+  <title>First Story Page</title>
   <link rel="stylesheet" href="./style.css">
   <link rel='stylesheet' href='https://unpkg.com/modern-css-reset/dist/reset.min.css'>
   <link rel='stylesheet' href='https://unpkg.com/splitting/dist/splitting.css'>
@@ -10,8 +10,7 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@700&amp;display=swap'>
   <link rel='stylesheet' href='https://use.typekit.net/zlj2zcu.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
+  <style>
 .container { width:600px; margin:0 auto}
 
 .reactions { display:flex; justify-content:flex-start; align-items:flex-start}
@@ -131,11 +130,14 @@ h1 > span {
 }
 
 </style>
+
+  </style>
 </head>
 <body>
+<!-- partial:index.partial.html -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">  
 <div class="wrapper">
-<div>
+<div class="banner">
   <h2>Heaven</h2>
   <div class="clouds">
     <img src="https://i.postimg.cc/PrMrJc9d/cloud1.png" style="--i:1">
@@ -157,6 +159,8 @@ h1 > span {
     Continue the stories <br><br>Continue the stories
     Spaces to write the stories</p>
 </section>
+<!-- partial -->
+
 <div class='container'>
   <div class='reactions'>
     <a class='reaction large' href='javascript:;' data-count=0 data-keep=1>
@@ -194,14 +198,11 @@ h1 > span {
     <span class="main" aria-label="boring" data-splitting>Boring</span>
   </h1>
 </div>
-  </body>
-  </html>
 <!-- partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <script  src="./script.js"></script>
 <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
 <script>Splitting();</script>
 
-</script>
 </body>
 </html>
