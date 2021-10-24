@@ -11,9 +11,6 @@
   <link rel='stylesheet' href='https://use.typekit.net/zlj2zcu.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.2.2/introjs.min.css" integrity="sha512-631ugrjzlQYCOP9P8BOLEMFspr5ooQwY3rgt8SMUa+QqtVMbY/tniEUOcABHDGjK50VExB4CNc61g5oopGqCEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-
  <style>
 .container { width:600px; margin:0 auto}
 
@@ -141,9 +138,6 @@ h1 > span {
   color: #0a41c9;
 }
 
-.introjs-overlay {
-  background-color: blue;
-}
 </style>
 
   </style>
@@ -228,12 +222,15 @@ tooltipClass: 'customTooltip',
 showProgress: true,
   steps: [{
     title: 'Welcome',
-    intro: 'Hello World! 👋'
+    intro: 'Hello World! 👋',
+    position: "bottom"
   },
   {
     element: document.querySelector('#step1'),
-    intro: 'This is where you gonna put the lovely title'
+    intro: 'This is where you gonna put the lovely title',
+    position: 'left'
   },
+
   {
     title: 'Farewell!',
     element: document.querySelector('#step2'),
