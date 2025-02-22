@@ -71,14 +71,15 @@ body {
 
 h1 > span {
   line-height: 1;
-  font-size: clamp( var(--fluid-type-min, 1rem), calc(1rem + var(--fluid-type-target, 3vw)), var(--fluid-type-max, 1.3rem) );
-  display: block;
+  /* Adjust the clamp values if needed for smaller text */
+  font-size: clamp(var(--fluid-type-min, 2rem), calc(1rem + var(--fluid-type-target, 5vw)), var(--fluid-type-max, 3rem));
+  display: inline-block; /* Changed from block to inline-block */
 }
 
 .main {
-  --fluid-type-min: 4rem;
-  --fluid-type-max: 5rem;
-  --fluid-type-target: 10vw;
+  --fluid-type-min: 2rem;  /* Reduced minimum font size */
+  --fluid-type-max: 3rem;  /* Reduced maximum font size */
+  --fluid-type-target: 5vw; /* Adjusted fluid target for responsiveness */
   font-family: acier-bat-gris, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -163,8 +164,8 @@ h1 > span {
   <div class="arrow animated bounce"></div>
 </div>
 <section>
-  <h1 id='step1'>Story Will Go Here</h1>
-  <p id="step2">CheckMates Project Stories<br><br>
+  <h1 id='step1'>Introduction</h1>
+  <p id="step2">Why CheckMates ?<br><br>
     Continue the stories <br><br>Continue the stories
     Spaces to write the stories</p>
 </section>
@@ -173,7 +174,7 @@ h1 > span {
 <div class="container">
   <div>
     <h1>
-      <span class="main" aria-label="boring" data-splitting>CheckMates</span>
+      <span class="main" aria-label="boring" data-splitting>Let's CheckMates</span>
     </h1>
   </div>
 </div>
